@@ -1,0 +1,37 @@
+h3.entitled{
+  font-size: 1.35rem;
+}
+
+.verdict-quiz{
+  font-size : 1.5rem;
+}
+
+.score, .reponse{
+  display: none;
+}
+
+.submit-quiz:disabled{
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+
+.img-quiz{
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+  margin-right: 10px;
+  display: none;
+}
+
+#reponse1-wrong,#reponse2-wrong,#reponse3-wrong,#reponse4-wrong,#reponse5-wrong{
+  color : $error;
+}
+
+.link-quiz{
+  text-decoration : underline;
+  color : $black !important;
+}
+
+.link-quiz:hover{
+  color: rgba(33, 37, 41,0.7) !important;
+}
