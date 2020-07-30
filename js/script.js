@@ -51,14 +51,14 @@ $(document).ready(function () {
 		}  
 		else if ($(':radio[id="reponse2"]:checked').val()) {
 			$(':radio[id="reponse2"]').prev('.img-quiz').css('display','inline-block');
-			$(':radio[id="reponse3"]').parent('p').css('padding-left','35px');
+			$(':radio[id="reponse3"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse1"]').parent('p').css('padding-left','35px');
 			messageErreurPremiereQuestion();
 		} 
 		else if ($(':radio[id="reponse1"]:checked').val()) {
 			$(':radio[id="reponse1"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse3"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse2"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse3"]').parent('p').css('padding-left','35px');
 			messageErreurPremiereQuestion();
 		}
 	}
@@ -72,14 +72,14 @@ $(document).ready(function () {
 		}  
 		else if ($(':radio[id="reponse4"]:checked').val()) {
 			$(':radio[id="reponse4"]').prev('.img-quiz').css('display','inline-block');
-			$(':radio[id="reponse5"]').parent('p').css('padding-left','35px');
+			$(':radio[id="reponse5"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse6"]').parent('p').css('padding-left','35px');
 			messageErreurDeuxiemeQuestion();
 		} 
 		else if ($(':radio[id="reponse6"]:checked').val()) {
 			$(':radio[id="reponse6"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse5"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse4"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse5"]').parent('p').css('padding-left','35px');
 			messageErreurDeuxiemeQuestion();
 		} 
 	}
@@ -87,15 +87,15 @@ $(document).ready(function () {
 	function gagnerTroisiemeQuestion() {
 		if ($(':radio[id="reponse7"]:checked').val()) {
 			$(':radio[id="reponse7"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse9"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse8"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse9"]').parent('p').css('padding-left','35px');
 			$(':radio[id="reponse10"]').parent('p').css('padding-left','35px');
 			messageErreurTroisiemeQuestion();
 		} 
 		else if ($(':radio[id="reponse8"]:checked').val()) {
 			$(':radio[id="reponse8"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse9"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse7"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse9"]').parent('p').css('padding-left','35px');
 			$(':radio[id="reponse10"]').parent('p').css('padding-left','35px');
 			messageErreurTroisiemeQuestion();
 		}
@@ -108,8 +108,8 @@ $(document).ready(function () {
 		}  
 		else if ($(':radio[id="reponse10"]:checked').val()) {
 			$(':radio[id="reponse10"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse9"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse8"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse9"]').parent('p').css('padding-left','35px');
 			$(':radio[id="reponse7"]').parent('p').css('padding-left','35px');
 			messageErreurTroisiemeQuestion();
 		} 
@@ -118,15 +118,15 @@ $(document).ready(function () {
 	function gagnerQuatriemeQuestion() {
 		if ($(':radio[id="reponse11"]:checked').val()) {
 			$(':radio[id="reponse11"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse13"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse12"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse13"]').parent('p').css('padding-left','35px');
 			$(':radio[id="reponse14"]').parent('p').css('padding-left','35px');
 			messageErreurQuatriemeQuestion();
 		} 
 		else if ($(':radio[id="reponse12"]:checked').val()) {
 			$(':radio[id="reponse12"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse13"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse11"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse13"]').parent('p').css('padding-left','35px');
 			$(':radio[id="reponse14"]').parent('p').css('padding-left','35px');
 			messageErreurQuatriemeQuestion();
 		} 
@@ -140,8 +140,8 @@ $(document).ready(function () {
 
 		else if ($(':radio[id="reponse14"]:checked').val()) {
 			$(':radio[id="reponse14"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse13"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse12"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse13"]').parent('p').css('padding-left','35px');
 			$(':radio[id="reponse11"]').parent('p').css('padding-left','35px');
 			messageErreurQuatriemeQuestion();
 
@@ -152,14 +152,14 @@ $(document).ready(function () {
 	function gagnerCinquiemeQuestion() {
 		if ($(':radio[id="reponse15"]:checked').val()) {
 			$(':radio[id="reponse15"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse17"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse16"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse17"]').parent('p').css('padding-left','35px');
 			messageErreurCinquiemeQuestion();
 		} 
 		else if ($(':radio[id="reponse16"]:checked').val()) {
 			$(':radio[id="reponse16"]').prev('.img-quiz').css('display','inline-block');
+			$(':radio[id="reponse17"]').prev('.img-quiz').css('display','inline-block');
 			$(':radio[id="reponse15"]').parent('p').css('padding-left','35px');
-			$(':radio[id="reponse17"]').parent('p').css('padding-left','35px');
 			messageErreurCinquiemeQuestion();
 		} 
 		else if ($(':radio[id="reponse17"]:checked').val()) {
