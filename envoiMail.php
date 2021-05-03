@@ -1,8 +1,8 @@
 <?php
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-$email_to = "pascal-leonard@orange.fr";
-$email_subject = "Contact LP";
+    $email_to = "pascal-leonard@orange.fr";
+    $email_subject = "Contact LP";
 
     $nom = htmlspecialchars($_POST['nom']); // required
     $entreprise = htmlspecialchars($_POST['entreprise']); // required

@@ -245,7 +245,7 @@ $(document).ready(function () {
 	$('#formContact').on('submit', function (event) {
 
 		event.preventDefault();
-		$.post('http://localhost:89/LP/php/envoiMail.php',
+		$.post('http://localhost:80/LP/php/envoiMail.php',
 			{nom : $('#nom').val(),
 			entreprise : $('#entreprise').val(),
 			email : $('#email').val(),
@@ -275,7 +275,7 @@ $(document).ready(function () {
 				$('.success').show();
 				$('.success').text('Votre mail a été envoyé avec succès ! Vous allez être rédirigé vers la page d\'accueuil.');
 				window.setTimeout(function () {
-					window.location.href = 'http://localhost:89/index.php';
+					window.location.href = 'http://localhost:80/index.php';
 				}, 3000);
 			}
 		});
