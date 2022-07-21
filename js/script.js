@@ -226,13 +226,13 @@ $(document).ready(function () {
 
 	function getVerdict() {
 		if (score<=2) {
-			$('.verdict-quiz').html('<img src="../img/sad.png" height="50px" width="75px"> Catastrophe ! vous devez impérativement nous <a href="contact.php" class="link-quiz">contacter</a>');
+			$('.verdict-quiz').html('<img src="./img/sad.png" height="50px" width="75px"> Catastrophe ! vous devez impérativement nous <a href="contact.php" class="link-quiz">contacter</a>');
 		}
 		else if (score<=4&&score>2) {
-			$('.verdict-quiz').html('<img src="../img/neutre.png" height="50px" width="75px"> C\'est bien mais vous avez encore quelques lacunes. N\'attendez pas pour nous <a href="contact.php" class="link-quiz">contacter</a>.');
+			$('.verdict-quiz').html('<img src="./img/neutre.png" height="50px" width="75px"> C\'est bien mais vous avez encore quelques lacunes. N\'attendez pas pour nous <a href="contact.php" class="link-quiz">contacter</a>.');
 		}
 		else{
-			$('.verdict-quiz').html('<img src="../img/happy.png" height="50px" width="75px"> Bravo ! Je ne peux que vous féliciter. Appelez nous pour en discuter.');
+			$('.verdict-quiz').html('<img src="./img/happy.png" height="50px" width="75px"> Bravo ! Je ne peux que vous féliciter. Appelez nous pour en discuter.');
 		}
 	}
 
@@ -245,7 +245,7 @@ $(document).ready(function () {
 	$('#formContact').on('submit', function (event) {
 
 		event.preventDefault();
-		$.post('http://localhost:80/LP/php/envoiMail.php',
+		$.post('http://localhost:80/LP/envoiMail.php',
 			{nom : $('#nom').val(),
 			entreprise : $('#entreprise').val(),
 			email : $('#email').val(),

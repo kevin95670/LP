@@ -78,12 +78,12 @@
               Question n°4 :
             </h2>
             <hr class="separator" />
-            <h3 class="entitled mb-3">Pour transporter des tonnelets de 5 litres de rhum alcoolisés à 55°C, je suis : </h3>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse11" name="question4"> Soumis à l'ADR</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse12" name="question4"> Soumis partiellement à l'ADR</p>
-            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse13" name="question4"> Non soumis à l'ADR</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse14" name="question4"> Soumis à l'ADR à partir de 1000 litres de rhum</p>
-            <p class="reponse mt-3" id="reponse4-wrong">Référence 3.3.1 sur la disposition spéciale 145</p>
+            <h3 class="entitled mb-3">Selon l'ADR, quel(s) équipement(s) de protection générale et individuelle, pour transporter de la peinture, ne sont PAS obligatoires : </h3>
+            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse11" name="question4"> Une cale de roue par véhicule</p>
+            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse12" name="question4"> Deux signaux d'avertissements autoporteurs</p>
+            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse13" name="question4"> Un masque d'évacuation d'urgence pour chaque membre de l'équipage</p>
+            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse14" name="question4"> Du liquide de rinçage pour les yeux</p>
+            <p class="reponse mt-3" id="reponse4-wrong">Référence 5.4.3</p>
           </div>  
         </div>
       </div>
