@@ -1,7 +1,7 @@
    </main>
    <footer class="text-faded text-center py-5">
       <div class="container">
-        <p class="m-0 small">Copyright &copy; LP 2022</p>
+        <p class="m-0 small">Copyright &copy; LP <?= date('Y') ?></p>
       </div>
     </footer>
 
