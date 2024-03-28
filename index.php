@@ -38,7 +38,7 @@
           <p>Vous avez encore des doutes sur vos connaissances de la législation pour vos produits ?</p>
           <p>Rendez vous sur notre <a id="link-index-quiz" href="quiz">quiz</a> ...</p>
           <p><strong>Et prochainement à vos côtés !</strong></p>
-          <p class="text-center"><img height="190" width="200" src="img/adr.png" alt='ADR'/></p>
+          <p class="text-center"><img src="img/adr.png" alt='ADR'/></p>
         </div>
       </div>
     </div>

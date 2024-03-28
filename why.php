@@ -1,12 +1,12 @@
 <?php require("header.php"); ?>
 
-<div class="container mt-5 mb-5 put-extra-mb">
+<div class="container mt-5 mb-5 put-extra-mb why">
   <!--<img class="img-fluid rounded mb-3 mb-lg-0" src="../img/about.jpg" alt="">-->
   <div class="row">
     <div class="col-xl-10 col-lg-11 mx-auto">
       <div class="bg-faded rounded px-5 pb-5 pt-3">
-        <img class="img-fluid float-left" id="ADR" src="img/adr.png" alt="ADR"/>
-        <img class="img-fluid float-right" id="adrBooks" src="img/adr.png" alt="adrBooks"/>
+        <img class="img-fluid float-left mobile-float-none" id="ADR" src="img/adr.png" alt="ADR"/>
+        <img class="img-fluid float-right mobile-hide" id="adrBooks" src="img/adr.png" alt="adrBooks"/>
         <div class="clearfix"></div>
         <h2 class="text-uppercase mt-2 mb-4 text-center">
           La règle générale

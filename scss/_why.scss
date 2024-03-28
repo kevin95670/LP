@@ -6,3 +6,19 @@
 .display-while-clicking{
   display : none;
 }
+
+@media screen and (max-width:992px){
+  .mobile-hide{
+    display : none;
+  }
+
+  .why{
+    & .mobile-float-none{
+      float: none !important;
+      margin: 0 auto 20px;
+      width: 100%;
+      max-width: 200px;
+      display: block;
+    }
+  }
+}
