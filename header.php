@@ -44,7 +44,7 @@
 
   <header class="site-heading text-center d-none d-lg-block">
     <h1>
-      <a href="index.php">
+      <a href="index">
         <img src="img/lp.png" alt="logo">
       </a>
     </h1>
@@ -58,25 +58,25 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.php"><img src="img/lp-phone.png" alt="phone-logo"></a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index"><img src="img/lp-phone.png" alt="phone-logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li <?php if($page == ""){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
-            <a class="nav-link text-uppercase text-expanded" href="index.php">Accueil
+            <a class="nav-link text-uppercase text-expanded" href="index">Accueil
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li <?php if($page == "why.php"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
-            <a class="nav-link text-uppercase text-expanded" href="why.php">Pourquoi un conseiller sécurité</a>
+          <li <?php if($page == "why"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
+            <a class="nav-link text-uppercase text-expanded" href="why">Pourquoi un conseiller sécurité</a>
           </li>
-          <li <?php if($page == "quiz.php"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
-            <a class="nav-link text-uppercase text-expanded" href="quiz.php">Quiz</a>
+          <li <?php if($page == "quiz"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
+            <a class="nav-link text-uppercase text-expanded" href="quiz">Quiz</a>
           </li>
-          <li <?php if($page == "contact.php"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
-            <a class="nav-link text-uppercase text-expanded" href="contact.php">Contact</a>
+          <li <?php if($page == "contact"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
+            <a class="nav-link text-uppercase text-expanded" href="contact">Contact</a>
           </li>
         </ul>
       </div>

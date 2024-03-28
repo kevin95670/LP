@@ -226,10 +226,10 @@ $(document).ready(function () {
 
 	function getVerdict() {
 		if (score<=2) {
-			$('.verdict-quiz').html('<img src="./img/sad.png" height="50px" width="75px"> Catastrophe ! vous devez impérativement nous <a href="contact.php" class="link-quiz">contacter</a>');
+			$('.verdict-quiz').html('<img src="./img/sad.png" height="50px" width="75px"> Catastrophe ! vous devez impérativement nous <a href="contact" class="link-quiz">contacter</a>');
 		}
 		else if (score<=4&&score>2) {
-			$('.verdict-quiz').html('<img src="./img/neutre.png" height="50px" width="75px"> C\'est bien mais vous avez encore quelques lacunes. N\'attendez pas pour nous <a href="contact.php" class="link-quiz">contacter</a>.');
+			$('.verdict-quiz').html('<img src="./img/neutre.png" height="50px" width="75px"> C\'est bien mais vous avez encore quelques lacunes. N\'attendez pas pour nous <a href="contact" class="link-quiz">contacter</a>.');
 		}
 		else{
 			$('.verdict-quiz').html('<img src="./img/happy.png" height="50px" width="75px"> Bravo ! Je ne peux que vous féliciter. Appelez nous pour en discuter.');
@@ -275,7 +275,7 @@ $(document).ready(function () {
 				$('.success').show();
 				$('.success').text('Votre mail a été envoyé avec succès ! Vous allez être rédirigé vers la page d\'accueuil.');
 				window.setTimeout(function () {
-					window.location.href = 'http://localhost:80/index.php';
+					window.location.href = 'http://localhost:80/LP/index';
 				}, 3000);
 			}
 		});

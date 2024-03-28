@@ -5,8 +5,8 @@
   <div class="row">
     <div class="col-xl-10 col-lg-11 mx-auto">
       <div class="bg-faded rounded px-5 pb-5 pt-3">
-        <img class="img-fluid float-left" id="ADR" width="160" height="160" src="img/ADR.png" alt="ADR"/>
-        <img class="img-fluid float-right" id="adrBooks" width="200" height="200" src="img/adrBooks.png" alt="adrBooks"/>
+        <img class="img-fluid float-left" id="ADR" src="img/adr.png" alt="ADR"/>
+        <img class="img-fluid float-right" id="adrBooks" src="img/adr.png" alt="adrBooks"/>
         <div class="clearfix"></div>
         <h2 class="text-uppercase mt-2 mb-4 text-center">
           La règle générale

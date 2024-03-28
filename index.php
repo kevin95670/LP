@@ -36,9 +36,9 @@
             </ul>
           <p><strong>Pascal LEONARD</strong>, votre conseiller à la sécurité ADR depuis 15 ans, saura étudier vos besoins avec professionnalisme et une totale confidentialité.</p>
           <p>Vous avez encore des doutes sur vos connaissances de la législation pour vos produits ?</p>
-          <p>Rendez vous sur notre <a id="link-index-quiz" href="quiz.php">quiz</a> ...</p>
+          <p>Rendez vous sur notre <a id="link-index-quiz" href="quiz">quiz</a> ...</p>
           <p><strong>Et prochainement à vos côtés !</strong></p>
-          <p class="text-center"><img height="190" width="200" src="img/adrBooks.png" alt='livreADR'/></p>
+          <p class="text-center"><img height="190" width="200" src="img/adr.png" alt='ADR'/></p>
         </div>
       </div>
     </div>
