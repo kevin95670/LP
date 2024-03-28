@@ -64,7 +64,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-          <li <?php if($page == ""){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
+          <li <?php if($page == "" || $page == "index"){echo 'class="nav-item active px-lg-4"';} else echo 'class="nav-item px-lg-4"'?>>
             <a class="nav-link text-uppercase text-expanded" href="index">Accueil
               <span class="sr-only">(current)</span>
             </a>
