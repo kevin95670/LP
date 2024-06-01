@@ -15,7 +15,7 @@
             06 84 37 43 65
           </p>
           <p class="m-0 text-info"><i class="fa fa-envelope" aria-hidden="true"></i>
-            <a class="text-info" href="mailto:pascalleonard95@gmail.com">pascalleonard95@gmail.com</a>
+            <a class="text-info" href="mailto:pascal-leonard@orange.fr">pascal-leonard@orange.fr</a>
           </p>
         </address>
       </div>
