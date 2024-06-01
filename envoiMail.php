@@ -1,7 +1,7 @@
 <?php
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "pascal-leonard@orange.fr";
+    $email_to = "pascalleonard95@gmail.com";
     $email_subject = "Contact LP";
 
     $nom = htmlspecialchars($_POST['nom']); // required
