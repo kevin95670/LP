@@ -1,14 +1,14 @@
 <?php
 
-    // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "pascal-leonard@orange.fr";
-    $email_subject = "Contact LP";
-
     $nom = htmlspecialchars($_POST['nom']); // required
     $entreprise = htmlspecialchars($_POST['entreprise']); // required
     $email = htmlspecialchars($_POST['email']); // required
     $telephone = htmlspecialchars($_POST['telephone']); // required
     $message = htmlspecialchars($_POST['message']); // not required
+
+    $email_to = "pascal-leonard@orange.fr";
+    $email_subject = $email." a demandé à contacter LP";
+	  $email_ionos = "noreply@lpconseilsecurite.fr";
 
     if((isset($nom)&&!empty($nom))
       && (isset($entreprise)&&!empty($entreprise))
@@ -20,7 +20,7 @@
       if($verification == ""){
         // create email headers
         $message = $message . "\r\n\r\n" . "Mon nom est : ". $nom . "\r\n" . "Mon entreprise se nomme : " . $entreprise . "\r\n" . "Mon telephone est : " . $telephone . "\r\n";
-        $headers = 'From: '.$email."\r\n".
+        $headers = 'From: '.$email_ionos."\r\n".
         'Reply-To: '.$email."\r\n" .
         'X-Mailer: PHP/' . phpversion();
         mail($email_to, $email_subject, $message, $headers);  
