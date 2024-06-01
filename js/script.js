@@ -273,7 +273,7 @@ $(document).ready(function () {
 			else { //Aucune erreur dans le form
 				$('.error').hide();
 				$('.success').show();
-				$('.success').text('Votre mail a été envoyé avec succès ! Vous allez être rédirigé vers la page d\'accueuil.');
+				$('.success').text('Votre mail a été envoyé avec succès ! Vous allez être rédirigé vers la page d\'accueil.');
 				window.setTimeout(function () {
 					window.location.href = 'http://localhost:80/LP/index';
 				}, 3000);
