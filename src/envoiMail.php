@@ -6,7 +6,7 @@
     $telephone = htmlspecialchars($_POST['telephone']); // required
     $message = htmlspecialchars($_POST['message']); // not required
 
-    $email_to = "pascal-leonard@orange.fr";
+    $email_to = "kevin-leonard@orange.fr";
     $email_subject = $email." a demandé à contacter LP";
 	  $email_ionos = "noreply@lpconseilsecurite.fr";
 
