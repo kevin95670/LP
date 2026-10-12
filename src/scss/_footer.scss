@@ -1,3 +1,7 @@
 footer {
   background-color: fade-out($secondary, 0.1);
+
+  .text-faded {
+    color: rgba($white, .7);
+  }
 }

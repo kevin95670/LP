@@ -1,10 +1,90 @@
-.show-suite{
-    left: 0;
-    bottom: -2rem;
-}
+// ---------------------------------------------------------------
+// PAGE "POURQUOI UN CONSEILLER SÉCURITÉ"
+// (la liste numérotée .prestations vient de index.scss)
+// ---------------------------------------------------------------
 
+// Le contenu replié : affiché par le bouton « Voir plus » (voir le JavaScript)
 .display-while-clicking{
   display : none;
+}
+
+// Carte : même base que les autres pages (blanc légèrement transparent)
+.why-carte{
+  padding : 1.5rem 1.75rem 2rem;
+  background-color : rgba($white, .88);
+  color : $gray-900;
+  box-shadow : 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+@media (min-width : 768px){
+  .why-carte{
+    padding : 1.75rem 3rem 2.5rem;
+  }
+}
+
+.why-titre{
+  margin : .5rem 0 2rem;
+  font-size : 1.9rem;
+  font-weight : 700;
+  text-align : center;
+  text-transform : uppercase;
+
+  &::after{
+    content : "";
+    display : block;
+    width : 4rem;
+    height : .3rem;
+    margin : .9rem auto 0;
+    background-color : $primary;
+  }
+}
+
+// Citation de l'ADR : la référence en tampon, le texte dans un bloc à barre orange
+.regle{
+  margin : 0 0 1.5rem;
+}
+
+.regle-ref{
+  display : inline-block;
+  margin-bottom : .75rem;
+  padding : .2rem .6rem;
+  border : 2px solid $gray-900;
+  color : $gray-900;
+  font-family : ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size : .85rem;
+  font-weight : 700;
+  letter-spacing : .06em;
+  text-transform : uppercase;
+}
+
+.regle blockquote{
+  margin : 0;
+  padding : 1.1rem 1.4rem;
+  background-color : rgba($gray-100, .8);
+  border-left : .4rem solid $primary;
+  font-size : 1.05rem;
+  font-weight : 600;
+  line-height : 1.6;
+}
+
+.why-sous-titre{
+  margin : 2rem 0 1rem;
+  padding-bottom : .6rem;
+  font-size : 1.3rem;
+  font-weight : 700;
+  border-bottom : .3rem solid $primary;
+}
+
+.show-suite{
+  margin-top : 1.75rem;
+  text-align : center;
+
+  .btn{
+    padding : .8rem 2.75rem;
+    font-weight : 700;
+    letter-spacing : .06em;
+    text-transform : uppercase;
+  }
 }
 
 @media screen and (max-width:992px){

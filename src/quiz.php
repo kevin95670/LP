@@ -1,112 +1,117 @@
-<?php require("header.php"); ?>
+<?php
+require("header.php");
 
+// ---------------------------------------------------------------
+// LES QUESTIONS
+// Pour ajouter une question : copier un bloc ci-dessous et l'adapter.
+//   'enonce'    : la question
+//   'reponses'  : la liste des réponses proposées
+//   'bonne'     : position de la bonne réponse (0 = la première, 1 = la deuxième...)
+//   'reference' : texte affiché quand la réponse est fausse
+// Les numéros et le JavaScript s'adaptent tout seuls.
+// ---------------------------------------------------------------
+$questions = [
+  [
+    'enonce'    => "Pour un produit dont le point d'ébullition est de 70°C, le taux maximal de remplissage d'un GRV est de : ",
+    'reponses'  => ['56%', '85%', '92%'],
+    'bonne'     => 2,
+    'reference' => 'Référence 4.1.1.4',
+  ],
+  [
+    'enonce'    => "Un ancien stock de futs en plastique est disponible dans mon usine. Je peux les utiliser si la date de fabrication est inférieure à : ",
+    'reponses'  => ['2 ans', '5 ans', '7 ans'],
+    'bonne'     => 1,
+    'reference' => 'Référence 4.1.1.15',
+  ],
+  [
+    'enonce'    => "La rédaction du document de transport accompagnant les produits dangereux doit se rédiger : ",
+    'reponses'  => [
+      "Numéro ONU / Etiquettes / Groupe d'emballage / Désignation officielle / Code Tunnel",
+      "Désignation officielle / Etiquettes / Groupe d'emballage / Numéro ONU / Code Tunnel",
+      "Numéro ONU / Désignation officielle / Etiquettes / Groupe d'emballage / Code Tunnel",
+      "Pas d'ordre particulier exigé",
+    ],
+    'bonne'     => 2,
+    'reference' => 'Référence 5.4.1.1.1',
+  ],
+  [
+    'enonce'    => "Selon l'ADR, quel(s) équipement(s) de protection générale et individuelle, pour transporter de la peinture, ne sont PAS obligatoires : ",
+    'reponses'  => [
+      "Une cale de roue par véhicule",
+      "Deux signaux d'avertissements autoporteurs",
+      "Un masque d'évacuation d'urgence pour chaque membre de l'équipage",
+      "Du liquide de rinçage pour les yeux",
+    ],
+    'bonne'     => 2,
+    'reference' => 'Référence 5.4.3',
+  ],
+  [
+    'enonce'    => "Etant chargeur, les contraintes suivantes me sont imposées : ",
+    'reponses'  => [
+      "Interdiction de fumer sauf cigarettes électroniques",
+      "Interdiction totale de charger les marchandises dangereuses avec des aliments pour animaux",
+      "Vérifier l'état de l'emballage des colis",
+    ],
+    'bonne'     => 2,
+    'reference' => 'Références 7.5.9 / 7.5.4 / 1.4.3.1.1',
+  ],
+];
+
+function echapper($texte) {
+  return htmlspecialchars($texte, ENT_QUOTES, 'UTF-8');
+}
+?>
+
+  <!-- Résultat : affiché par le JavaScript après l'envoi -->
   <div class="container my-5 score">
     <div class="row">
       <div class="col-xl-9 col-lg-10 mx-auto">
-        <div class="bg-faded rounded px-5 py-4">
-          <h3 class="mb-4 text-center">
-            <span class="score-text text-center">Vous avez </span>
-          </h3>
-          <hr class="separator" />
-          <p class="verdict-quiz mb-3"> </p>
-        </div>  
+        <div class="placard">
+          <h2 class="placard-score">
+            <span class="score-text">Vous avez </span>
+          </h2>
+          <div class="verdict-quiz"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-xl-9 col-lg-10 mx-auto">
+        <div class="quiz-intro">
+          <h1>Testez vos connaissances ADR</h1>
+          <p><?= count($questions) ?> questions. Pour chaque mauvaise réponse, la référence du texte ADR vous est indiquée.</p>
+        </div>
       </div>
     </div>
   </div>
 
 <form id="validate-quiz">
+<?php $numeroReponse = 0; ?>
+<?php foreach ($questions as $i => $question): ?>
     <div class="container my-5">
       <div class="row">
         <div class="col-xl-9 col-lg-10 mx-auto">
-          <div class="bg-faded rounded px-5 py-4">
-            <h2 class="mb-4 text-center">
-              Question n°1 :
-            </h2>
-            <hr class="separator" />
-            <h3 class="entitled mb-3">Pour un produit dont le point d'ébullition est de 70°C, le taux maximal de remplissage d'un GRV est de : </h3>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse1" name="question1"> 56%</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse2" name="question1"> 85%</p>
-            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse3" name="question1"> 92%</p>
-            <p class="reponse mt-3" id="reponse1-wrong">Référence 4.1.1.4</p>
-          </div>  
+          <div class="question">
+            <div class="question-tete">
+              <span class="losange" aria-hidden="true"><span><?= $i + 1 ?></span></span>
+              <div>
+                <h2 class="question-label">Question n°<?= $i + 1 ?></h2>
+                <h3 class="entitled"><?= echapper($question['enonce']) ?></h3>
+              </div>
+            </div>
+<?php foreach ($question['reponses'] as $j => $texte): ?>
+<?php $numeroReponse++; $estBonne = ($j === $question['bonne']); ?>
+            <p class="reponse-ligne"><img class="img-quiz" src="img/<?= $estBonne ? 'right' : 'wrong' ?>.png" alt="<?= $estBonne ? 'bon' : 'faux' ?>"/><input type="radio" id="reponse<?= $numeroReponse ?>" name="question<?= $i + 1 ?>"<?= $estBonne ? ' data-bonne' : '' ?>><label for="reponse<?= $numeroReponse ?>"><?= echapper($texte) ?></label></p>
+<?php endforeach; ?>
+            <p class="reponse" id="reponse<?= $i + 1 ?>-wrong"><span class="tampon"><?= echapper($question['reference']) ?></span></p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-xl-9 col-lg-10 mx-auto">
-          <div class="bg-faded rounded px-5 py-4">
-            <h2 class="mb-4 text-center">
-              Question n°2 :  
-            </h2>
-            <hr class="separator" />
-            <h3 class="entitled mb-3">Un ancien stock de futs en plastique est disponible dans mon usine. Je peux les utiliser si la date de fabrication est inférieure à : </h3>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse4" name="question2"> 2 ans</p>
-            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse5" name="question2"> 5 ans</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse6" name="question2"> 7 ans</p>
-            <p class="reponse mt-3" id="reponse2-wrong">Référence 4.1.1.15</p>
-          </div>  
-        </div>
-      </div>
-    </div>
-
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-xl-9 col-lg-10 mx-auto">
-          <div class="bg-faded rounded px-5 py-4">
-            <h2 class="mb-4 text-center">
-              Question n°3 :
-            </h2>
-            <hr class="separator" />
-            <h3 class="entitled mb-3">La rédaction du document de transport accompagnant les produits dangereux doit se rédiger : </h3>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse7" name="question3"> Numéro ONU / Etiquettes / Groupe d'emballage / Désignation officielle / Code Tunnel</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse8" name="question3"> Désignation officielle / Etiquettes / Groupe d'emballage / Numéro ONU / Code Tunnel</p>
-            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse9" name="question3"> Numéro ONU / Désignation officielle / Etiquettes / Groupe d'emballage / Code Tunnel</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse10" name="question3"> Pas d'ordre particulier exigé</p>
-            <p class="reponse mt-3" id="reponse3-wrong">Référence 5.4.1.1.1</p>
-          </div>  
-        </div>
-      </div>
-    </div>
-
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-xl-9 col-lg-10 mx-auto">
-          <div class="bg-faded rounded px-5 py-4">
-            <h2 class="mb-4 text-center">
-              Question n°4 :
-            </h2>
-            <hr class="separator" />
-            <h3 class="entitled mb-3">Selon l'ADR, quel(s) équipement(s) de protection générale et individuelle, pour transporter de la peinture, ne sont PAS obligatoires : </h3>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse11" name="question4"> Une cale de roue par véhicule</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse12" name="question4"> Deux signaux d'avertissements autoporteurs</p>
-            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse13" name="question4"> Un masque d'évacuation d'urgence pour chaque membre de l'équipage</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse14" name="question4"> Du liquide de rinçage pour les yeux</p>
-            <p class="reponse mt-3" id="reponse4-wrong">Référence 5.4.3</p>
-          </div>  
-        </div>
-      </div>
-    </div>
-
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-xl-9 col-lg-10 mx-auto">
-          <div class="bg-faded rounded px-5 py-4">
-            <h2 class="mb-4 text-center">
-              Question n°5 :
-            </h2>
-            <hr class="separator" />
-            <h3 class="entitled mb-3">Etant chargeur, les contraintes suivantes me sont imposées : </h3>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse15" name="question5"> Interdiction de fumer sauf cigarettes électroniques</p>
-            <p><img class="img-quiz" src="img/wrong.png" alt="faux"/><input type="radio" id="reponse16" name="question5"> Interdiction totale de charger les marchandises dangereuses avec des aliments pour animaux</p>
-            <p><img class="img-quiz" src="img/right.png" alt="bon"/><input type="radio" id="reponse17" name="question5"> Vérifier l'état de l'emballage des colis</p>
-            <p class="reponse mt-3" id="reponse5-wrong">Références 7.5.9 / 7.5.4 / 1.4.3.1.1</p>
-          </div>  
-        </div>
-      </div>
-    </div>
-
+<?php endforeach; ?>
   <div class="container">
     <div class="row">
       <div class="mx-auto mb-5">
@@ -114,7 +119,6 @@
       </div>
     </div>
   </div>
-
 
 </form>
 

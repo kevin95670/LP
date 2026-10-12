@@ -1,12 +1,142 @@
+// ---------------------------------------------------------------
+// PAGE CONTACT
+// ---------------------------------------------------------------
+
 .success{
-	color : $success;
+  color : $success;
 }
 
 .error{
-	color : $error;
+  color : $error;
 }
 
 .obligatoire{
-	color : red;
+  color : red;
 }
 
+// Cartes : même base que l'accueil et le quiz (blanc opaque)
+.contact-intro, .contact-carte{
+  background-color : rgba($white, .88);
+  color : $gray-900;
+  box-shadow : 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+.contact-intro{
+  padding : 1.5rem 1.75rem;
+  border-left : .5rem solid $primary;
+
+  h1{
+    font-size : 1.9rem;
+    font-weight : 700;
+    margin-bottom : .5rem;
+  }
+
+  p{
+    margin-bottom : 0;
+  }
+}
+
+.contact-carte{
+  padding : 1.75rem;
+}
+
+.contact-titre{
+  margin-bottom : 1.25rem;
+  padding-bottom : .75rem;
+  font-size : 1.3rem;
+  font-weight : 700;
+  border-bottom : .3rem solid $primary;
+}
+
+// Formulaire
+.contact-form{
+  label{
+    margin-bottom : .3rem;
+    font-size : .85rem;
+    font-weight : 700;
+    letter-spacing : .08em;
+    text-transform : uppercase;
+    color : $gray-700;
+  }
+
+  .form-control{
+    border : 2px solid $gray-300;
+    border-radius : 0;
+    padding : .65rem .8rem;
+    height : auto;
+
+    &:focus{
+      border-color : $gray-900;
+      box-shadow : 0 0 0 .2rem rgba($primary, .45);
+    }
+  }
+
+  .btn{
+    padding : .8rem 2.75rem;
+    font-weight : 700;
+    letter-spacing : .06em;
+    text-transform : uppercase;
+  }
+}
+
+.contact-note{
+  margin-bottom : 1rem;
+  font-size : .9rem;
+  color : $gray-700;
+}
+
+// Messages renvoyés par le formulaire (affichés par le JavaScript)
+.contact-form .error,
+.contact-form .success{
+  margin : 0 0 1rem;
+  padding : .75rem 1rem;
+  font-weight : 700;
+  border-left : .4rem solid;
+}
+
+.contact-form .error{
+  background-color : rgba(255, 0, 0, .07);
+}
+
+.contact-form .success{
+  background-color : rgba(0, 128, 0, .09);
+}
+
+// Coordonnées
+.contact-coordonnees{
+  address{
+    margin : 0;
+  }
+
+  p{
+    margin-bottom : .25rem;
+  }
+
+  p + .contact-label{
+    margin-top : 1.25rem;
+  }
+}
+
+.contact-label{
+  margin-bottom : .1rem;
+  font-size : .85rem;
+  font-weight : 700;
+  letter-spacing : .12em;
+  text-transform : uppercase;
+  color : $gray-700;
+}
+
+.contact-lien{
+  color : $gray-900;
+  font-weight : 700;
+  text-decoration : underline;
+  text-decoration-color : $primary;
+  text-decoration-thickness : .2rem;
+  text-underline-offset : .2rem;
+  overflow-wrap : anywhere;
+
+  &:hover{
+    color : $gray-900;
+    text-decoration-color : $gray-900;
+  }
+}

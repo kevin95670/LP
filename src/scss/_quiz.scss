@@ -1,30 +1,249 @@
-h3.entitled{
-  font-size: 1.35rem;
-}
-
-.verdict-quiz{
-  font-size : 1.5rem;
-}
+// ---------------------------------------------------------------
+// PAGE QUIZ
+// ---------------------------------------------------------------
 
 .score, .reponse{
   display: none;
 }
 
-.submit-quiz:disabled{
-  background-color: $primary !important;
-  border-color: $primary !important;
+// Cartes : même base que la carte d'accueil (blanc opaque)
+.quiz-intro, .question, .placard{
+  background-color : rgba($white, .88);
+  color : $gray-900;
+  box-shadow : 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+.quiz-intro{
+  padding : 1.5rem 1.75rem;
+  border-left : .5rem solid $primary;
+
+  h1{
+    font-size : 1.9rem;
+    font-weight : 700;
+    margin-bottom : .5rem;
+  }
+
+  p{
+    margin-bottom : 0;
+  }
+}
+
+// Une question
+.question{
+  padding : 1.5rem 1.75rem 1.25rem;
+}
+
+.question-tete{
+  display : flex;
+  align-items : center;
+  margin-bottom : 1rem;
+}
+
+// Numéro de la question : un losange comme les placards ADR
+.losange{
+  flex : 0 0 auto;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  width : 2.8rem;
+  height : 2.8rem;
+  margin : .7rem 1.5rem .7rem .7rem;
+  transform : rotate(45deg);
+  background-color : $primary;
+  border : 3px solid $gray-900;
+
+  span{
+    transform : rotate(-45deg);
+    font-size : 1.2rem;
+    font-weight : 800;
+    line-height : 1;
+  }
+}
+
+.question-label{
+  margin : 0 0 .25rem;
+  font-size : .85rem;
+  font-weight : 700;
+  letter-spacing : .12em;
+  text-transform : uppercase;
+  color : $gray-700;
+}
+
+h3.entitled{
+  margin : 0;
+  font-size : 1.3rem;
+  line-height : 1.35;
+}
+
+// Une réponse : toute la ligne est cliquable
+.reponse-ligne{
+  position : relative;
+  display : flex;
+  align-items : center;
+  margin : 0 0 .6rem;
+  line-height : 1.4;
+  background-color : rgba($white, .6);
+  border : 2px solid $gray-300;
+  border-left-width : .4rem;
+
+  input{
+    flex : 0 0 auto;
+    width : 1.15rem;
+    height : 1.15rem;
+    margin : 0 .9rem 0 1rem;
+    accent-color : $primary;
+    cursor : pointer;
+  }
+
+  label{
+    flex : 1;
+    margin : 0;
+    padding : .8rem 1rem .8rem 0;
+    cursor : pointer;
+  }
+
+  &:hover{
+    border-color : $gray-500;
+  }
+
+  &:has(input:checked){
+    border-color : $gray-900;
+    background-color : $gray-100;
+  }
 }
 
 .img-quiz{
-  width: 25px;
-  height: 25px;
-  vertical-align: top;
-  margin-right: 10px;
-  display: none;
+  display : none;
+  position : absolute;
+  left : .9rem;
+  top : 50%;
+  width : 25px;
+  height : 25px;
+  margin-top : -12.5px;
 }
 
-#reponse1-wrong,#reponse2-wrong,#reponse3-wrong,#reponse4-wrong,#reponse5-wrong{
+// Après l'envoi : on montre la bonne réponse et l'éventuelle erreur
+.corrige{
+  .reponse-ligne{
+    input{
+      display : none;
+    }
+
+    label{
+      padding-left : 3.4rem;
+      cursor : default;
+    }
+
+    &:hover{
+      border-color : $gray-300;
+    }
+  }
+
+  .reponse-ligne.est-bonne{
+    border-color : $success;
+    background-color : rgba(0, 128, 0, .09);
+  }
+
+  .reponse-ligne.est-fausse{
+    border-color : $error;
+    background-color : rgba(255, 0, 0, .07);
+  }
+
+  .est-bonne .img-quiz,
+  .est-fausse .img-quiz{
+    display : block;
+  }
+}
+
+// Référence du texte, façon tampon
+.question .reponse{
+  margin : 1rem 0 0;
+}
+
+.tampon{
+  display : inline-block;
+  padding : .25rem .7rem;
+  border : 2px solid $error;
   color : $error;
+  font-family : ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size : .95rem;
+  font-weight : 700;
+  letter-spacing : .06em;
+  text-transform : uppercase;
+  transform : rotate(-1.5deg);
+}
+
+// Résultat : bandeau de hachures comme un balisage de chantier
+.placard{
+  position : relative;
+  overflow : hidden;
+  padding : 2.25rem 1.75rem 1.5rem;
+
+  &::before{
+    content : "";
+    position : absolute;
+    top : 0;
+    left : 0;
+    right : 0;
+    height : .75rem;
+    background : repeating-linear-gradient(-45deg, $gray-900 0, $gray-900 .9rem, $primary .9rem, $primary 1.8rem);
+  }
+}
+
+.placard-score{
+  margin-bottom : 1rem;
+  font-size : 1.6rem;
+  font-weight : 700;
+}
+
+.verdict-quiz{
+  display : flex;
+  align-items : center;
+  margin : 0;
+  font-size : 1.25rem;
+  line-height : 1.4;
+}
+
+.verdict-texte{
+  flex : 1;
+}
+
+// Pictogramme du verdict : un losange coloré, comme les numéros de question
+.verdict-losange{
+  width : 3.4rem;
+  height : 3.4rem;
+  margin : .9rem 1.8rem .9rem .9rem;
+
+  span{
+    display : flex;
+  }
+}
+
+.verdict-mauvais{
+  background-color : $error;
+  color : $white;
+}
+
+.verdict-moyen{
+  background-color : $primary;
+  color : $gray-900;
+}
+
+.verdict-bon{
+  background-color : $success;
+  color : $white;
+}
+
+.submit-quiz{
+  padding : .9rem 2.75rem;
+  font-weight : 700;
+  letter-spacing : .06em;
+  text-transform : uppercase;
+}
+
+.submit-quiz:disabled{
+  background-color: $primary !important;
+  border-color: $primary !important;
 }
 
 .link-quiz{
@@ -34,4 +253,23 @@ h3.entitled{
 
 .link-quiz:hover{
   color: rgba(33, 37, 41,0.7) !important;
+}
+
+@media (max-width : 575px){
+  .quiz-intro, .question{
+    padding-left : 1rem;
+    padding-right : 1rem;
+  }
+
+  .quiz-intro h1{
+    font-size : 1.5rem;
+  }
+
+  .losange{
+    margin-right : 1.2rem;
+  }
+
+  h3.entitled{
+    font-size : 1.1rem;
+  }
 }
